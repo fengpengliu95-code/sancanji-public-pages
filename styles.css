@@ -1,0 +1,163 @@
+/*
+ * 首发期公开静态页公共样式。
+ * 供隐私政策页与支持页共用，保持最小、稳定、易读。
+ */
+
+:root {
+  --bg: #f7f1e8;
+  --surface: rgba(255, 255, 255, 0.88);
+  --surface-strong: #fffaf2;
+  --text: #2f241b;
+  --text-muted: #66574a;
+  --accent: #cf6f2f;
+  --border: rgba(108, 83, 60, 0.14);
+  --shadow: 0 18px 40px rgba(71, 46, 27, 0.08);
+  --max-width: 920px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "PingFang SC", "PingFang TC", "Noto Sans CJK SC", "Noto Sans CJK TC", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 233, 208, 0.92), transparent 34%),
+    linear-gradient(180deg, #fbf5ec 0%, var(--bg) 100%);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent);
+}
+
+.page {
+  width: min(calc(100% - 32px), var(--max-width));
+  margin: 0 auto;
+  padding: 48px 0 64px;
+}
+
+.hero,
+.card,
+.language-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(207, 111, 47, 0.12);
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(32px, 5vw, 46px);
+  line-height: 1.15;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 17px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.two-up {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card,
+.language-card {
+  padding: 28px;
+}
+
+.card h2,
+.language-card h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.card h3,
+.language-card h3 {
+  margin: 28px 0 10px;
+  font-size: 18px;
+}
+
+.card p,
+.card li,
+.language-card p,
+.language-card li {
+  color: var(--text-muted);
+}
+
+.card ul,
+.language-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.language-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.language-header span {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.footer {
+  margin-top: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .page {
+    width: min(calc(100% - 20px), var(--max-width));
+    padding: 28px 0 40px;
+  }
+
+  .hero,
+  .card,
+  .language-card {
+    border-radius: 20px;
+  }
+
+  .hero,
+  .card,
+  .language-card {
+    padding: 22px;
+  }
+
+  .language-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
